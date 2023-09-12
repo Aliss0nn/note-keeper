@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardNotaComponent } from './components/notas/card-nota/card-nota.component';
 import { ListarNotasComponent } from './components/notas/listar-notas/listar-notas.component';
 import { FormsModule } from '@angular/forms';
+import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CardNotaComponent,
-    ListarNotasComponent
+    ListarNotasComponent,
+    CriarNotaComponent
   ],
   imports: [
     BrowserModule,
