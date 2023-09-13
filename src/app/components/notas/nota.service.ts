@@ -18,18 +18,26 @@ export class NotaService {
   }
 
   editar(nota: Nota){
+   const url = `${this.API_URL}/${nota.id}`
 
+    return this.http.put<Nota>(url,nota);
   }
 
   excluir(nota: Nota) {
-    return;
+    const url = `${this.API_URL}/${nota.id}`
+
+    return this.http.delete<Nota>(url);
   }
 
   selecionarPorId(id: number): Nota | undefined {
+    //const url = `${this.API_URL}/${id}`;
+    //return this.http.get<Nota>(url);
+
     return;
   }
 
   selecionarTodos(): Nota[] {
-    return [];
-  }
+   //return this.http.get<Nota[]>(this.API_URL);
+   return []
+ } 
 }
