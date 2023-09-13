@@ -21,6 +21,14 @@ export class NotaService {
 
   }
 
+  excluir(nota: Nota) {
+    return;
+  }
+
+  selecionarPorId(id: number): Nota | undefined {
+    return;
+  }
+
   selecionarTodos(): Nota[] {
     return [];
   }

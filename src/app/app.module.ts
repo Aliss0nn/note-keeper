@@ -32,7 +32,9 @@ import { ExcluirNotasComponent } from './components/notas/excluir-notas/excluir-
     HttpClientModule,
     NgbModule,
     ToastrModule.forRoot({
-
+      timeOut: 5000,
+      positionClass:'toast-bottom-right',
+      preventDuplicates: true,
     }),
   ],
   providers: [],
