@@ -21,8 +21,11 @@ constructor(private notaService: NotaService, private router: Router){
 }
 
 criarNota() {
-  this.notaService.criar(this.nota);
+  this.notaService.criar(this.nota).subscribe((nota) => {
+    
+    this.router.navigate(['/notas', 'listar']);
+  });
 
-  this.router.navigate(['/notas', 'listar']);
+
 }
 }
