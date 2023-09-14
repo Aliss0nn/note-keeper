@@ -12,9 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 export class CriarNotaComponent {
 nota: Nota;
 
-constructor(private notaService: NotaService,
+constructor(
+   private notaService: NotaService,
    private router: Router,
-   private toastService: ToastrService){
+   private toastService: ToastrService
+   )
+   {
    this.nota = new Nota('','','dark',0); 
 }
 
