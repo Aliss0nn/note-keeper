@@ -13,6 +13,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { EditarNotasComponent } from './components/notas/editar-notas/editar-notas.component';
 import { ExcluirNotasComponent } from './components/notas/excluir-notas/excluir-notas.component';
+import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
+import { EditarCategoriasComponent } from './components/categorias/editar-categorias/editar-categorias.component';
+import { ExcluirCategoriasComponent } from './components/categorias/excluir-categorias/excluir-categorias.component';
+import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ExcluirNotasComponent } from './components/notas/excluir-notas/excluir-
     ListarNotasComponent,
     CriarNotaComponent,
     EditarNotasComponent,
-    ExcluirNotasComponent
+    ExcluirNotasComponent,
+    CriarCategoriaComponent,
+    EditarCategoriasComponent,
+    ExcluirCategoriasComponent,
+    ListarCategoriasComponent
   ],
   imports: [
     BrowserModule,

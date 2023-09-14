@@ -3,6 +3,7 @@ import { Nota } from '../Nota';
 import { NotaService } from '../nota.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { categoria } from '../../categorias/categorias';
 
 @Component({
   selector: 'app-criar-nota',
@@ -15,7 +16,7 @@ nota: Nota;
 constructor(
    private notaService: NotaService,
    private router: Router,
-   private toastService: ToastrService
+   private toastService: ToastrService,
    )
    {
    this.nota = new Nota('','','dark',0); 

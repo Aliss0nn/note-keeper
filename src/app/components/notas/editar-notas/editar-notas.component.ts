@@ -3,6 +3,7 @@ import { Nota } from '../Nota';
 import { NotaService } from '../nota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { categoria } from '../../categorias/categorias';
 
 @Component({
   selector: 'app-editar-notas',
@@ -16,7 +17,7 @@ export class EditarNotasComponent implements OnInit {
     private notaService: NotaService,
     private route: ActivatedRoute,
     private router: Router,
-    private toastService: ToastrService
+    private toastService: ToastrService,
   )
   {
    this.nota = new Nota('','','dark',0); 
