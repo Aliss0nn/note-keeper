@@ -30,7 +30,7 @@ import { ListarCategoriasComponent } from './components/categorias/listar-catego
     CriarCategoriaComponent,
     EditarCategoriasComponent,
     ExcluirCategoriasComponent,
-    ListarCategoriasComponent
+    ListarCategoriasComponent,
   ],
   imports: [
     BrowserModule,

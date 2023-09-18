@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Nota } from '../Nota';
-import { NotaService } from '../nota.service';
+import { Nota } from '../../../models/Nota';
+import { NotaService } from '../../../services/nota.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { categoria } from '../../categorias/categorias';
+import { categoria } from '../../../models/categorias';
 
 @Component({
   selector: 'app-criar-nota',

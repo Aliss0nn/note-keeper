@@ -19,6 +19,10 @@
     {
       "titulo": "editado",
       "id": 5
+    },
+    {
+      "titulo": "Teste",
+      "id": 6
     }
   ],
   "notas": [
@@ -45,14 +49,6 @@
       "conteudo": "editando",
       "tema": "dark",
       "id": 4
-    },
-    {
-      "titulo": "Teste",
-      "id": 5
-    },
-    {
-      "titulo": "Teste",
-      "id": 6
     }
   ]
 }

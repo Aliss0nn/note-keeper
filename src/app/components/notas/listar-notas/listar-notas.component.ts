@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Nota } from '../Nota';
-import { NotaService } from '../nota.service';
+import { Nota } from '../../../models/Nota';
+import { NotaService } from '../../../services/nota.service';
 
 @Component({
   selector: 'app-listar-notas',

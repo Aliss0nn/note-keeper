@@ -1,4 +1,4 @@
-import { categoria } from "../categorias/categorias";
+import { categoria } from "./categorias";
 
 export class Nota{
 id?: number;

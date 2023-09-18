@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Nota } from '../Nota';
+import { Nota } from '../../../models/Nota';
 
 @Component({
   selector: 'app-card-nota',

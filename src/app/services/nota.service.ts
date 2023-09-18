@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Nota } from './Nota';
+import { Nota } from '../models/Nota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
