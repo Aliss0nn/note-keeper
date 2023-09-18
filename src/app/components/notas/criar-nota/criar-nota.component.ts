@@ -12,6 +12,7 @@ import { categoria } from '../../../models/categorias';
 })
 export class CriarNotaComponent {
 nota: Nota;
+categorias: categoria[] = [];
 
 constructor(
    private notaService: NotaService,
@@ -31,5 +32,10 @@ criarNota() {
 
     this.router.navigate(['/notas', 'listar']);
   });
+}
+
+definirCategoria(categoria: categoria){
+  this.nota.categoria = categoria;
+  this.nota.categoriaId = categoria.id;
 }
 }
