@@ -23,6 +23,10 @@
     {
       "titulo": "Teste",
       "id": 6
+    },
+    {
+      "id": 7,
+      "titulo": "teste"
     }
   ],
   "notas": [
@@ -30,25 +34,29 @@
       "id": 1,
       "titulo": "Lavar o cachorro 🦮",
       "conteudo": "Pegar o shampoo > pegar a toalha",
-      "tema": "warning"
+      "tema": "warning",
+      "categoriaId": 3
     },
     {
       "id": 2,
       "titulo": "Planejar as Aulas de Angular",
       "conteudo": "Pesquisar material",
-      "tema": "info"
+      "tema": "info",
+      "categoriaId": 2
     },
     {
       "id": 3,
       "titulo": "Atualizar Aplicações Angular",
       "conteudo": "Preparar projetos para as aulas",
-      "tema": "danger"
+      "tema": "danger",
+      "categoriaId": 1
     },
     {
       "titulo": "Editado",
       "conteudo": "editando",
       "tema": "dark",
-      "id": 4
+      "id": 4,
+      "categoriaId": 4
     }
   ]
 }

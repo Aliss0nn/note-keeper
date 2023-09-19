@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { categoria } from "../models/categorias";
+import { Categoria } from "../models/categorias";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -15,29 +15,29 @@ export class CategoriaService{
 
   }
   
-  criar(categoria: categoria) : Observable<categoria> {
-    return this.http.post<categoria>(this.API_URL, categoria);
+  criar(categoria: Categoria) : Observable<Categoria> {
+    return this.http.post<Categoria>(this.API_URL, categoria);
   }
 
-  editar(categoria: categoria) : Observable<categoria> {
+  editar(categoria: Categoria) : Observable<Categoria> {
    const url = `${this.API_URL}/${categoria.id}`
 
-    return this.http.put<categoria>(url,categoria);
+    return this.http.put<Categoria>(url,categoria);
   }
 
-  excluir(categoria: categoria) : Observable<categoria> {
+  excluir(categoria: Categoria) : Observable<Categoria> {
     const url = `${this.API_URL}/${categoria.id}`
 
-    return this.http.delete<categoria>(url);
+    return this.http.delete<Categoria>(url);
   }
 
-  selecionarPorId(id: number) : Observable<categoria>
+  selecionarPorId(id: number) : Observable<Categoria>
   {
     const url = `${this.API_URL}/${id}`;
-    return this.http.get<categoria>(url);  
+    return this.http.get<Categoria>(url);  
   }
 
-  selecionarTodos() : Observable<categoria[]> {
-   return this.http.get<categoria[]>(this.API_URL);   
+  selecionarTodos() : Observable<Categoria[]> {
+   return this.http.get<Categoria[]>(this.API_URL);   
  } 
 }

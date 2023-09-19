@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { categoria } from '../../../models/categorias';
+import { Categoria } from '../../../models/categorias';
 import { CategoriaService } from '../../../services/categoria.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./criar-categoria.component.css']
 })
 export class CriarCategoriaComponent {
-categoria: categoria;
+categoria: Categoria;
 
 constructor(
   private categoriaService: CategoriaService,
@@ -18,7 +18,7 @@ constructor(
   private toastService: ToastrService, 
 )
 {
-this.categoria = new categoria('',0);
+this.categoria = new Categoria('',0);
 }
 
 criarCategoria(){

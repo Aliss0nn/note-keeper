@@ -36,7 +36,7 @@ pathMatch: 'full',
   component: CriarCategoriaComponent,
 },
 {
-  path:'categorias/editar',
+  path:'categorias/editar/:id',
   component: EditarCategoriasComponent,
 },
 {
@@ -44,7 +44,7 @@ pathMatch: 'full',
   component:ListarCategoriasComponent,
 },
 {
-  path:'categorias/excluir',
+  path:'categorias/excluir/:id',
   component: ExcluirCategoriasComponent,
 },
 ];

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { categoria } from '../../../models/categorias';
+import { Categoria } from '../../../models/categorias';
 import { CategoriaService } from '../../../services/categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./excluir-categorias.component.css']
 })
 export class ExcluirCategoriasComponent implements OnInit{
-categoria: categoria
+categoria: Categoria
 
 constructor(
   private categoriaService: CategoriaService,
@@ -19,13 +19,14 @@ constructor(
     private toastService: ToastrService,
 )
 {
-this.categoria = new categoria('',0)
+this.categoria = new Categoria('',0)
 }
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.categoriaService.selecionarPorId(id).subscribe((categoria: categoria ) =>{
-      this.categoria = categoria
+    this.categoriaService.selecionarPorId(id).subscribe((categoria: Categoria ) =>{
+      this.categoria = categoria;
+
     });
   }
 

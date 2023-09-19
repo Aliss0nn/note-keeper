@@ -1,27 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Nota } from '../../../models/Nota';
 import { NotaService } from '../../../services/nota.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { categoria } from '../../../models/categorias';
+import { Categoria } from '../../../models/categorias';
+import { CategoriaService } from 'src/app/services/categoria.service';
 
 @Component({
   selector: 'app-criar-nota',
   templateUrl: './criar-nota.component.html',
   styleUrls: ['./criar-nota.component.css']
 })
-export class CriarNotaComponent {
+export class CriarNotaComponent implements OnInit {
 nota: Nota;
-categorias: categoria[] = [];
+categorias: Categoria[] = [];
 
 constructor(
    private notaService: NotaService,
+   private categoriaService: CategoriaService,
    private router: Router,
    private toastService: ToastrService,
    )
    {
    this.nota = new Nota('','','dark',0); 
 }
+  ngOnInit(): void {
+    this.categoriaService
+      .selecionarTodos()
+      .subscribe((categorias: Categoria[]) => {
+        this.categorias = categorias;
+      });
+  }
 
 criarNota() {
    this.notaService.criar(this.nota).subscribe((nota) => {
@@ -34,7 +43,7 @@ criarNota() {
   });
 }
 
-definirCategoria(categoria: categoria){
+definirCategoria(categoria: Categoria){
   this.nota.categoria = categoria;
   this.nota.categoriaId = categoria.id;
 }

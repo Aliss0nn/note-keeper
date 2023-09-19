@@ -4,8 +4,19 @@
      <!-- <i class="bi bi-bookmarks-fill"></i> -->
      NoteKeeper
   </a>
-  <a class="nav-link fs-5">Início</a>
-  <a class="nav-link fs-5" routerLink="/categorias/listar">Categorias</a>
-  <a class="nav-link fs-5" routerLink="/notas/listar">Notas</a>
+  <div class="d-flex gap-2">
+    <a routerLink="/categorias/listar" class="nav-link">
+       <button routerLinkActive="btn-primary text-light"
+       class="btn btn-outline-primary px-4">
+        Categorias
+       </button>
+    </a>
+    <a routerLink="/notas/listar" class="nav-link">
+      <button routerLinkActive="btn-primary text-light"
+      class="btn btn-outline-primary px-4">
+       Notas
+      </button>
+   </a>
+  </div>
 </div>
 </nav>
