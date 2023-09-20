@@ -7,6 +7,7 @@ conteudo: string;
 tema: string;
 categoriaId?: number;
 categoria?: Categoria;
+arquivada: boolean;
 
 
 constructor(titulo: string, conteudo: string, tema: Tema, id?: number, categoriaId?: number, categoria?: Categoria) {
@@ -16,6 +17,7 @@ constructor(titulo: string, conteudo: string, tema: Tema, id?: number, categoria
   this.tema = tema;
   this.categoria = categoria;
   this.categoriaId = categoriaId;
+  this.arquivada = false;
 }
 }
 

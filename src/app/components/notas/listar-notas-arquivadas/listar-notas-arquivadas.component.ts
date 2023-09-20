@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Nota } from '../../../models/Nota';
-import { NotaService } from '../../../services/nota.service';
+import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Nota } from 'src/app/models/Nota';
 import { Categoria } from 'src/app/models/categorias';
 import { CategoriaService } from 'src/app/services/categoria.service';
-import { ToastrService } from 'ngx-toastr';
+import { NotaService } from 'src/app/services/nota.service';
 
 @Component({
-  selector: 'app-listar-notas',
-  templateUrl: './listar-notas.component.html',
-  styleUrls: ['./listar-notas.component.css']
+  selector: 'app-listar-notas-arquivadas',
+  templateUrl: './listar-notas-arquivadas.component.html',
+  styleUrls: ['./listar-notas-arquivadas.component.css']
 })
-export class ListarNotasComponent implements OnInit {
+export class ListarNotasArquivadasComponent {
   notas: Nota[] = [];
   categorias: Categoria[] = [];
 
@@ -31,27 +31,27 @@ export class ListarNotasComponent implements OnInit {
   }
 
   selecionarTodas(): void {
-    this.notaService.selecionarTodos().subscribe((notas: Nota[]) => {
+    this.notaService.selecionarNotasArquivadas().subscribe((notas: Nota[]) => {
       this.notas = notas;
     });
   }
 
   selecionarNotasPorCategoria(categoria: Categoria) {
     this.notaService
-      .selecionarNotasPorCategoria(categoria)
+      .selecionarNotasArquivadasPorCategoria(categoria)
       .subscribe((notas: Nota[]) => {
         this.notas = notas;
       });
   }
 
-  arquivarNota(nota: Nota) {
-    nota.arquivada = true;
+  reativarNota(nota: Nota) {
+    nota.arquivada = false;
 
     this.notaService.editar(nota).subscribe((nota: Nota) => {
-      this.toastService.success(`Nota ${nota.titulo} arquivada com sucesso!`);
+      this.toastService.success(`Nota ${nota.titulo} reativada com sucesso!`);
 
       this.notaService
-        .selecionarTodos()
+        .selecionarNotasArquivadas()
         .subscribe((notas: Nota[]) => (this.notas = notas));
     });
   }

@@ -42,9 +42,30 @@ export class NotaService {
    return this.http.get<Nota[]>(this.NOTAS_API_URL);   
  } 
 
- selecionarNotasPorCategoria(categoria: Categoria): Observable<Nota[]> {
-  const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas`;
+ //selecionarNotasPorCategoria(categoria: Categoria): Observable<Nota[]> {
+  //const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas`;
+
+ // return this.http.get<Nota[]>(url);
+//}
+
+selecionarNotasArquivadas(): Observable<Nota[]> {
+  const url = `${this.NOTAS_API_URL}?arquivada=true`;
 
   return this.http.get<Nota[]>(url);
 }
+
+selecionarNotasPorCategoria(categoria: Categoria): Observable<Nota[]> {
+  const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas?arquivada=false`;
+
+  return this.http.get<Nota[]>(url);
+}
+
+selecionarNotasArquivadasPorCategoria(
+  categoria: Categoria
+): Observable<Nota[]> {
+  const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas?arquivada=true`;
+
+  return this.http.get<Nota[]>(url);
+}
+
 }
